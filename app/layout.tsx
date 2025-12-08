@@ -1,14 +1,27 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
-import { Inconsolata } from "next/font/google";
-import ScrollProvider from "@/components/providers/scrollProvider";
-import { ThemeProvider } from "@/components/providers/themeProvider";
+import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
+
+import Navbar from "@/components/common/Navbar";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inconsolata",
+});
+
+const doto = Doto({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-doto",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetBrainsMono",
 });
 
 export const metadata: Metadata = {
@@ -23,14 +36,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inconsolata.variable} antialiased`}>
+      <body
+        className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollProvider>{children}</ScrollProvider>
+          <Navbar />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

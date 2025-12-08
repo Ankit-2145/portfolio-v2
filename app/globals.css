@@ -5,6 +5,8 @@
 
 @theme {
   --font-inconsolata: var(--font-inconsolata);
+  --font-doto: var(--font-doto);
+  --font-jetBrainsMono: var(--font-jetBrainsMono);
 }
 
 @theme inline {
