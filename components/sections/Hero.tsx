@@ -19,7 +19,7 @@ const Hero = () => {
           className="absolute top-0 left-0 w-full border-t-2 border-dashed"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 2, delay: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
           style={{ transformOrigin: "left" }}
         />
 
@@ -28,7 +28,7 @@ const Hero = () => {
           className="absolute bottom-0 left-0 w-full border-b-2 border-dashed"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 2, delay: 0.9, ease: "easeInOut" }}
+          transition={{ duration: 1, delay: 0.9, ease: "easeInOut" }}
           style={{ transformOrigin: "left" }}
         />
 
@@ -37,7 +37,7 @@ const Hero = () => {
           className="absolute top-0 left-166 h-full border-l-2 border-dashed"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 1, delay: 1.2, ease: "easeInOut" }}
           style={{ transformOrigin: "top" }}
         />
 
@@ -46,7 +46,7 @@ const Hero = () => {
           className="absolute bottom-0 right-60 h-full border-r-2 border-dashed"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ duration: 2, delay: 1.5, ease: "easeInOut" }}
+          transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
           style={{ transformOrigin: "bottom" }}
         />
         <div className="space-y-2 p-2">
