@@ -2,25 +2,32 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import {
+  Feather,
+  GraduationCap,
+  Home,
+  LucideIcon,
+  Menu,
+  Sparkles,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { HyperText } from "@/components/ui/hyper-text";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 interface NavItem {
   name: string;
   href: string;
+  icon: LucideIcon;
 }
 
 const navItems: NavItem[] = [
-  { name: "Home", href: "/" },
-  { name: "Work", href: "/work" },
-  { name: "Craft", href: "/craft" },
-  { name: "Skills", href: "/skills" },
+  { name: "Home", href: "/", icon: Home },
+  { name: "Work", href: "/work", icon: GraduationCap },
+  { name: "Craft", href: "/craft", icon: Sparkles },
+  { name: "Skills", href: "/skills", icon: Feather },
 ];
 
 const Navbar = () => {
@@ -54,9 +61,9 @@ const Navbar = () => {
                   isActive && "bg-foreground text-background"
                 )}
               >
-                <HyperText as="span" className="text-base font-medium">
-                  {item.name}
-                </HyperText>
+                <span className="flex items-center gap-2 text-base font-medium">
+                  <item.icon className="size-4" /> {item.name}
+                </span>
               </Link>
             );
           })}
