@@ -38,7 +38,7 @@ export default function NoScrollWrapper({
     <>
       {showMessage && (
         <div className="fixed top-5 left-1/2 -translate-x-1/2 bg-black text-white px-4 py-2 rounded-xl shadow-lg z-50">
-          ❌ You can&apos;t scroll right now
+          This is a single page portfolio use navbar to visit other pages
         </div>
       )}
 

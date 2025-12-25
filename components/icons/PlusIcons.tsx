@@ -31,7 +31,7 @@ const PlusIcons = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="lucide lucide-plus hidden absolute top-[10.6rem] h-6 w-6 lg:translate-y-21 pointer-events-none lg:block lg:left-[40.8rem] text-neutral-300 dark:text-neutral-600 translate-y-[.5px]"
+        className="lucide lucide-plus hidden absolute top-[10.6rem] h-6 w-6 lg:translate-y-21 pointer-events-none lg:block lg:left-[53.8rem] text-neutral-300 dark:text-neutral-600 translate-y-[.5px]"
         aria-hidden="true"
       >
         <path d="M5 12h14" />
@@ -65,7 +65,7 @@ const PlusIcons = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="lucide lucide-plus hidden absolute top-86 h-6 w-6 lg:translate-y-21 pointer-events-none lg:block lg:left-[40.8rem] text-neutral-300 dark:text-neutral-600 translate-y-[.5px]"
+        className="lucide lucide-plus hidden absolute top-86 h-6 w-6 lg:translate-y-21 pointer-events-none lg:block lg:left-[53.8rem] text-neutral-300 dark:text-neutral-600 translate-y-[.5px]"
         aria-hidden="true"
       >
         <path d="M5 12h14" />
