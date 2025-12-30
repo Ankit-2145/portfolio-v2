@@ -127,6 +127,12 @@
   }
 }
 
+@layer components {
+  .screen-width {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

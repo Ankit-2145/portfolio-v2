@@ -5,7 +5,6 @@ import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
 import Navbar from "@/components/common/Navbar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import NoScrollWrapper from "@/components/noscrollwrapper";
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
@@ -46,10 +45,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NoScrollWrapper>
-            <Navbar />
-            <main>{children}</main>
-          </NoScrollWrapper>
+          <Navbar />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
