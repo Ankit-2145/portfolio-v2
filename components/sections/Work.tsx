@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { workData } from "@/constants/WorkExperience";
 import VerticalDashedLine from "../ui/VerticalDashedLine";
 
-export function WorkExperience() {
+export const WorkExperience = () => {
   return (
     <section className="space-y-16 font-inconsolata">
       <VerticalDashedLine position="left" />
@@ -13,18 +13,13 @@ export function WorkExperience() {
           <div className="space-y-4">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-lg font-jetBrainsMono font-semibold inline-flex items-center gap-1">
-                  {work.company}
-                  {work.link && (
-                    <Link
-                      href={work.link}
-                      target="_blank"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
-                  )}
-                </h3>
+                <Link href={work.link} target="_blank">
+                  <h3 className="text-lg font-jetBrainsMono font-semibold inline-flex items-center gap-1">
+                    {work.company}
+
+                    <ArrowUpRight className="w-4 h-4" />
+                  </h3>
+                </Link>
                 <p className="text-sm text-foreground opacity-60 mt-1">
                   {work.type && (
                     <>
@@ -64,4 +59,4 @@ export function WorkExperience() {
       ))}
     </section>
   );
-}
+};

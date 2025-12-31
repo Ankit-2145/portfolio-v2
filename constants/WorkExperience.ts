@@ -6,7 +6,7 @@ interface WorkItem {
   location: string;
   description: string;
   achievements?: string[];
-  link?: string;
+  link: string;
 }
 
 export const workData: WorkItem[] = [
