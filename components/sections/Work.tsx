@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { workData } from "@/constants/WorkExperience";
-import VerticalDashedLine from "../ui/VerticalDashedLine";
+import VerticalDashedLine from "@/components/ui/VerticalDashedLine";
 
-export const WorkExperience = () => {
+export const Work = () => {
   return (
     <section className="space-y-16 font-inconsolata">
       <VerticalDashedLine position="left" />

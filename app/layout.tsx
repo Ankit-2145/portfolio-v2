@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased selection:bg-rose-500`}
       >
         <ThemeProvider
           attribute="class"
