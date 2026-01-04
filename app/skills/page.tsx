@@ -11,6 +11,11 @@ const page = () => {
         <span className="font-inconsolata text-sm text-muted-foreground/80 font-medium ml-4">
           Things I&apos;m good at (and enjoy doing)
         </span>
+        <p className="font-inconsolata text-base text-justify text-muted-foreground mt-10">
+          I work with a focused set of technologies to design, build, and ship
+          production-ready web applications. My emphasis is on clean UI,
+          predictable behavior, and code that scales as the product grows.
+        </p>
       </div>
       <Skills />
     </main>
