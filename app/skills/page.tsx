@@ -1,9 +1,12 @@
 import { Highlighter } from "@/components/ui/highlighter";
 import { Skills } from "@/components/sections/Skills";
+import VerticalDashedLine from "@/components/ui/VerticalDashedLine";
 
 const page = () => {
   return (
     <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <VerticalDashedLine position="left" />
+      <VerticalDashedLine position="right" />
       <div className="my-12">
         <Highlighter action="underline" color="#fb5607">
           <h2 className="font-doto text-2xl font-semibold">Skills </h2>

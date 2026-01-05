@@ -1,9 +1,12 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { ComponentType, SVGProps } from "react";
+import { Button } from "@/components/ui/button";
 
-interface TechButton {
+type TechIcon = string | ComponentType<SVGProps<SVGSVGElement>>;
+
+export interface TechButton {
   name: string;
-  icon: string;
+  icon: TechIcon;
 }
 
 interface TechSectionProps {
@@ -17,21 +20,28 @@ export const TechSection = ({ title, technologies }: TechSectionProps) => {
       <h3 className="font-jetBrainsMono text-sm text-muted-foreground">
         <pre>{`<${title}>`}</pre>
       </h3>
+
       <div className="flex flex-wrap gap-2 py-3">
-        {technologies.map((tech, index) => (
-          <Button
-            key={index}
-            size="sm"
-            className="font-inconsolata text-foreground py-2 border border-border cursor-default gap-1.5 bg-muted/40 px-1.5 pr-2 text-xs"
-          >
-            <Image src={tech.icon} alt={tech.name} width={16} height={16} />
-            {tech.name}
-          </Button>
-        ))}
+        {technologies.map((tech, index) => {
+          const Icon = tech.icon;
+
+          return (
+            <Button
+              key={index}
+              size="sm"
+              className="font-inconsolata text-foreground py-2 border border-border gap-1.5 bg-muted/40 hover:bg-muted/40 px-1.5 pr-2 text-[13px]"
+            >
+              {typeof Icon === "string" ? (
+                <Image src={Icon} alt={tech.name} width={20} height={20} />
+              ) : (
+                <Icon className="w-5 h-5 text-foreground" />
+              )}
+
+              {tech.name}
+            </Button>
+          );
+        })}
       </div>
-      <h3 className="font-jetBrainsMono text-sm mb-3 text-muted-foreground">
-        <pre>{`<${title} />`}</pre>
-      </h3>
     </div>
   );
 };
