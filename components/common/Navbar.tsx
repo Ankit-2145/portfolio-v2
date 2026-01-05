@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   Feather,
+  FlaskConical,
   GraduationCap,
   Home,
   LucideIcon,
   Menu,
-  Sparkles,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -26,7 +26,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "Home", href: "/", icon: Home },
   { name: "Work", href: "/work", icon: GraduationCap },
-  { name: "Craft", href: "/craft", icon: Sparkles },
+  { name: "Lab", href: "/lab", icon: FlaskConical },
   { name: "Skills", href: "/skills", icon: Feather },
 ];
 
