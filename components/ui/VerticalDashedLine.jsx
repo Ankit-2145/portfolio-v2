@@ -11,7 +11,7 @@ const VerticalDashedLine = ({ position = "left" }) => {
       ? "left-5 lg:left-16 xl:left-16 border-l-2"
       : "right-5 lg:right-16 xl:right-16 border-r-2";
 
-  const delay = position === "left" ? 0 : 0.35; // 👈 stagger timing
+  const delay = position === "left" ? 0 : 0.35;
 
   return (
     <motion.div
