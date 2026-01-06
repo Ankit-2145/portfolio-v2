@@ -5,6 +5,7 @@ import { useState } from "react";
 import {
   Feather,
   FlaskConical,
+  Folder,
   GraduationCap,
   Home,
   LucideIcon,
@@ -26,6 +27,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "Home", href: "/", icon: Home },
   { name: "Work", href: "/work", icon: GraduationCap },
+  { name: "Projects", href: "/projects", icon: Folder },
   { name: "Lab", href: "/lab", icon: FlaskConical },
   { name: "Skills", href: "/skills", icon: Feather },
 ];

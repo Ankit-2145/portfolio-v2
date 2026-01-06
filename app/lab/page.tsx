@@ -8,7 +8,7 @@ const page = () => {
           <h2 className="font-doto text-2xl font-semibold">Lab </h2>
         </Highlighter>
         <span className="font-inconsolata text-sm text-muted-foreground/80 font-medium ml-4">
-          My experiments & free time wandering
+          Small experiments in UI, performance, and interaction.
         </span>
       </div>
     </main>
