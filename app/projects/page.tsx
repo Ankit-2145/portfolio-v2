@@ -1,4 +1,5 @@
 import { Heading } from "@/components/common/Heading";
+import { ProjectSection } from "@/components/sections/ProjectSection";
 
 const page = () => {
   return (
@@ -7,6 +8,7 @@ const page = () => {
         title="Projects"
         subTitle="Side projects built from learning and curiosity."
       />
+      <ProjectSection />
     </main>
   );
 };

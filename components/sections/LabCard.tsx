@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -7,9 +9,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { labData } from "@/data/Lab";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export const LabCard = () => {
   return (
