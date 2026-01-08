@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { workData } from "@/constants/WorkExperience";
+import { workData } from "@/data/WorkExperience";
 import VerticalDashedLine from "@/components/ui/VerticalDashedLine";
 
 export const Work = () => {

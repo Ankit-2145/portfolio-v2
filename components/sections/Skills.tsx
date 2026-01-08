@@ -6,7 +6,7 @@ import {
   platformData,
   softwareData,
   toolsData,
-} from "@/constants/TechSkills";
+} from "@/data/TechSkills";
 import { TechSection } from "./TechSection";
 
 export const Skills = () => {
