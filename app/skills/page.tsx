@@ -1,4 +1,4 @@
-import { Skills } from "@/components/sections/Skills";
+import { SkillSection } from "@/components/sections/SkillSection";
 import { Heading } from "@/components/common/Heading";
 
 const page = () => {
@@ -11,7 +11,7 @@ const page = () => {
       production-ready web applications. My emphasis is on clean UI, predictable
       behavior, and code that scales as the product grows."
       />
-      <Skills />
+      <SkillSection />
     </main>
   );
 };

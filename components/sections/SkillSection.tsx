@@ -6,10 +6,10 @@ import {
   platformData,
   softwareData,
   toolsData,
-} from "@/data/TechSkills";
+} from "@/data/TechSkillData";
 import { TechSection } from "./TechSection";
 
-export const Skills = () => {
+export const SkillSection = () => {
   return (
     <section>
       <TechSection title="CORE" technologies={coreData} />

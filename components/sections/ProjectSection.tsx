@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { projectData } from "@/data/Projects";
+import { projectData } from "@/data/ProjectData";
 
 export const ProjectSection = () => {
   return (

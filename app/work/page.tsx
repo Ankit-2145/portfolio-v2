@@ -1,5 +1,5 @@
 import { Heading } from "@/components/common/Heading";
-import { Work } from "@/components/sections/Work";
+import { WorkSection } from "@/components/sections/WorkSection";
 
 const page = () => {
   return (
@@ -8,7 +8,7 @@ const page = () => {
         title="Work"
         subTitle="Real-world products, built and shipped for real users."
       />
-      <Work />
+      <WorkSection />
     </main>
   );
 };

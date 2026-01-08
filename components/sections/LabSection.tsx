@@ -8,10 +8,10 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import { labData } from "@/data/Lab";
+import { labData } from "@/data/LabData";
 import { Button } from "@/components/ui/button";
 
-export const LabCard = () => {
+export const LabSection = () => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-inconsolata">
       {labData.map((item) => (

@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { workData } from "@/data/WorkExperience";
-import VerticalDashedLine from "@/components/ui/VerticalDashedLine";
+import { workData } from "@/data/WorkData";
 
-export const Work = () => {
+export const WorkSection = () => {
   return (
     <section className="space-y-16 font-inconsolata">
-      <VerticalDashedLine position="left" />
-      <VerticalDashedLine position="right" />
       {workData.map((work, index) => (
         <div key={index} className="group relative gap-4 md:gap-8">
           <div className="space-y-4">

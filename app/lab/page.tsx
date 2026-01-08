@@ -1,5 +1,5 @@
 import { Heading } from "@/components/common/Heading";
-import { LabCard } from "@/components/sections/LabCard";
+import { LabSection } from "@/components/sections/LabSection";
 
 const page = () => {
   return (
@@ -8,7 +8,7 @@ const page = () => {
         title="Lab"
         subTitle="Animations and components built with code."
       />
-      <LabCard />
+      <LabSection />
     </main>
   );
 };
