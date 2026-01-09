@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
-import Navbar from "@/components/common/Navbar";
+import { Navbar } from "@/components/common/Navbar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const inconsolata = Inconsolata({
