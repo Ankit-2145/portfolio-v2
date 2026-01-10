@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
 import { Navbar } from "@/components/common/Navbar";
+import { Footer } from "@/components/common/Footer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const inconsolata = Inconsolata({
@@ -37,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased selection:bg-rose-500`}
+        className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
@@ -46,7 +47,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main className="flex-1">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
