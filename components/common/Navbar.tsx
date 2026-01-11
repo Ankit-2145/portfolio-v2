@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   Feather,
+  FileText,
   FlaskConical,
   Folder,
   GraduationCap,
@@ -15,7 +16,12 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 interface NavItem {
@@ -28,6 +34,7 @@ const navItems: NavItem[] = [
   { name: "Home", href: "/", icon: Home },
   { name: "Work", href: "/work", icon: GraduationCap },
   { name: "Projects", href: "/projects", icon: Folder },
+  { name: "Blog", href: "/blog", icon: FileText },
   { name: "Lab", href: "/lab", icon: FlaskConical },
   { name: "Skills", href: "/skills", icon: Feather },
 ];
@@ -89,6 +96,7 @@ export const Navbar = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent className="bg-background" side="top">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col px-6 divide-y-2 divide-dashed">
                   {navItems.map((item) => {
                     const isActive =
