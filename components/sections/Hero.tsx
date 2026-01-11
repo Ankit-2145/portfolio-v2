@@ -5,8 +5,8 @@ import { Download, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="mt-12">
-      <div className="space-y-4">
+    <section className="flex flex-col justify-center items-start min-h-[70vh] py-20">
+      <div className=" space-y-4">
         <span className="font-jetBrainsMono text-xs text-muted-foreground">
           Hey, I&apos;m{" "}
         </span>
