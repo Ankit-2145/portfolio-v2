@@ -1,9 +1,19 @@
 import { ViewTransitions } from "next-view-transitions";
+import { Layout } from "nextra-theme-blog";
+import "nextra-theme-blog/style.css";
 
-export default function BlogLayout({
+export const metadata = {
+  title: "Blog Example",
+};
+
+export default async function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <ViewTransitions>{children}</ViewTransitions>;
+  return (
+    <Layout>
+      <ViewTransitions>{children}</ViewTransitions>
+    </Layout>
+  );
 }
