@@ -1,0 +1,190 @@
+---
+title: "Better Auth: A Modern Authentication Framework for TypeScript"
+description: "Explore Better Auth, a comprehensive authentication solution that simplifies user management in modern web applications"
+date: 2026-01-27
+author: "Tech Blog"
+tags: ["authentication", "typescript", "web-development", "security"]
+---
+
+# Better Auth: A Modern Authentication Framework for TypeScript
+
+Authentication is one of those features that every application needs, but implementing it correctly can be surprisingly complex. From password hashing to session management, OAuth flows to two-factor authentication, there's a lot to get right. That's where Better Auth comes in.
+
+## What is Better Auth?
+
+Better Auth is a modern, type-safe authentication framework built specifically for TypeScript applications. It aims to provide a comprehensive authentication solution that's both developer-friendly and secure by default. Unlike many authentication libraries that force you into specific patterns, Better Auth is designed to be flexible while maintaining strong security practices.
+
+## Why Another Auth Library?
+
+You might be wondering: don't we already have Passport, Auth.js (NextAuth), and dozens of other authentication solutions? What makes Better Auth different?
+
+The key differentiators are:
+
+**Type Safety First**: Built from the ground up with TypeScript, Better Auth provides excellent type inference and catches errors at compile time rather than runtime.
+
+**Modern Architecture**: Designed for modern frameworks like Next.js, SvelteKit, and Remix, with full support for both server and client components.
+
+**Batteries Included**: Comes with built-in support for multiple authentication strategies, session management, password reset flows, email verification, and more.
+
+**Database Agnostic**: Works with any database through adapters, whether you're using PostgreSQL, MySQL, MongoDB, or even Prisma ORM.
+
+## Core Features
+
+### Multiple Authentication Strategies
+
+Better Auth supports various authentication methods out of the box:
+
+```typescript
+import { BetterAuth } from "better-auth";
+
+const auth = new BetterAuth({
+  database: {
+    provider: "postgresql",
+    url: process.env.DATABASE_URL,
+  },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    },
+    github: {
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    },
+  },
+  emailAndPassword: {
+    enabled: true,
+    requireEmailVerification: true,
+  },
+});
+```
+
+### Session Management
+
+Better Auth handles session management intelligently, with support for both cookie-based and token-based sessions:
+
+```typescript
+// Server-side session checking
+const session = await auth.getSession(request);
+
+if (!session) {
+  return redirect("/login");
+}
+
+// Access user data with full type safety
+const userId = session.user.id;
+const userEmail = session.user.email;
+```
+
+### Email Verification and Password Reset
+
+Common authentication flows are built-in and customizable:
+
+```typescript
+// Send verification email
+await auth.sendVerificationEmail({
+  email: "user@example.com",
+  redirectTo: "/verify-email",
+});
+
+// Initiate password reset
+await auth.sendPasswordResetEmail({
+  email: "user@example.com",
+  redirectTo: "/reset-password",
+});
+```
+
+## Getting Started
+
+Here's a quick example of integrating Better Auth into a Next.js application:
+
+### Installation
+
+```bash
+npm install better-auth
+# or
+pnpm add better-auth
+```
+
+### Basic Setup
+
+```typescript
+// lib/auth.ts
+import { BetterAuth } from "better-auth";
+
+export const auth = new BetterAuth({
+  database: {
+    provider: "postgresql",
+    url: process.env.DATABASE_URL,
+  },
+  secret: process.env.AUTH_SECRET,
+  callbacks: {
+    async session({ session, user }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          role: user.role,
+        },
+      };
+    },
+  },
+});
+```
+
+### Creating Auth Routes
+
+```typescript
+// app/api/auth/[...auth]/route.ts
+import { auth } from "@/lib/auth";
+
+export const GET = auth.handler;
+export const POST = auth.handler;
+```
+
+### Client-Side Usage
+
+```typescript
+"use client";
+
+import { useAuth } from "better-auth/react";
+
+export function LoginForm() {
+  const { signIn, isLoading } = useAuth();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await signIn.email({
+      email: "user@example.com",
+      password: "password123",
+      redirectTo: "/dashboard",
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Form fields */}
+    </form>
+  );
+}
+```
+
+## Advanced Features
+
+### Two-Factor Authentication
+
+Better Auth includes built-in support for 2FA:
+
+```typescript
+// Enable 2FA for a user
+await auth.twoFactor.enable({
+  userId: user.id,
+  method: "totp",
+});
+
+
+
+
+
+_Have you tried Better Auth in your projects? Share your experiences in the comments below!_
+```

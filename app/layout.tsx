@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { RootProvider } from "fumadocs-ui/provider/next";
 
 import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
@@ -47,7 +48,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <RootProvider>{children}</RootProvider>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
