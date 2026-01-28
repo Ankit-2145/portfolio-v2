@@ -1,0 +1,236 @@
+---
+title: "Better Auth: A Modern Authentication Framework for TypeScript"
+description: "Explore Better Auth, a comprehensive authentication solution that simplifies user management in modern web applications"
+date: 2026-01-27
+author: "Ankit Sharma"
+tags: ["authentication", "typescript", "web-development", "security"]
+---
+
+![Hello](/better-auth.png)
+
+```js title="index.js"
+console.log("Hello World");
+```
+
+In this blog, we’ll:
+
+- Set up Better Auth in a Next.js app
+- Configure authentication providers
+- Handle sessions on the server and client
+- Build simple sign-in and sign-up flows
+
+All examples use **Next.js App Router** and **TypeScript**.
+
+---
+
+## Why Better Auth?
+
+If you’ve used older auth libraries, you’ve probably faced at least one of these:
+
+- Confusing session handling
+- Too much client-side logic
+- Poor App Router support
+- Over-engineered configs
+
+Better Auth focuses on:
+
+- **Server-first authentication**
+- **Simple APIs** (`auth.api.getSession()` 👀)
+- **Framework-native patterns**
+- **Minimal boilerplate**
+
+Perfect for modern Next.js projects.
+
+---
+
+## Installation
+
+Install Better Auth and its peer dependencies:
+
+```bash
+npm install better-auth
+```
+
+(If you’re using a database adapter, install that as well — Prisma, Drizzle, etc.)
+
+---
+
+## Creating the Auth Instance
+
+Create a central auth configuration file.
+
+```ts
+// lib/auth.ts
+import { betterAuth } from "better-auth";
+
+export const auth = betterAuth({
+  appName: "My Next App",
+  baseURL: "http://localhost:3000",
+  secret: process.env.AUTH_SECRET!,
+});
+```
+
+This `auth` object becomes the **single source of truth** for authentication across your app.
+
+---
+
+## Setting Up the Auth Route
+
+Better Auth exposes APIs via a route handler.
+
+```ts
+// app/api/auth/[...all]/route.ts
+import { auth } from "@/lib/auth";
+
+export const GET = auth.handler;
+export const POST = auth.handler;
+```
+
+That’s it. No giant config files, no custom controllers.
+
+---
+
+## Sign Up & Sign In (Client Side)
+
+Here’s a simple sign-in example using a client component.
+
+```tsx
+"use client";
+
+import { authClient } from "better-auth/client";
+
+export function SignInButton() {
+  const signIn = async () => {
+    await authClient.signIn.email({
+      email: "user@example.com",
+      password: "password123",
+    });
+  };
+
+  return <button onClick={signIn}>Sign In</button>;
+}
+```
+
+Better Auth handles cookies and sessions automatically.
+
+---
+
+## Getting the Session (Server Side)
+
+This is where Better Auth really shines.
+
+Instead of messy helpers, you simply do:
+
+```ts
+// app/dashboard/page.tsx
+import { auth } from "@/lib/auth";
+
+export default async function DashboardPage() {
+  const session = await auth.api.getSession();
+
+  if (!session) {
+    return <div>Not authenticated</div>;
+  }
+
+  return (
+    <div>
+      <h1>Welcome, {session.user.email}</h1>
+    </div>
+  );
+}
+```
+
+No middleware hacks. No client-side fetching.
+
+---
+
+## Protecting Routes
+
+You can protect routes at **page level** or using **middleware**.
+
+### Page-Level Protection (Recommended)
+
+```ts
+const session = await auth.api.getSession();
+if (!session) redirect("/login");
+```
+
+Simple, readable, and explicit.
+
+---
+
+## Getting Session on the Client
+
+If you _do_ need session data on the client:
+
+```tsx
+"use client";
+
+import { useSession } from "better-auth/client";
+
+export function UserInfo() {
+  const { data: session, isLoading } = useSession();
+
+  if (isLoading) return <p>Loading...</p>;
+  if (!session) return <p>Not logged in</p>;
+
+  return <p>{session.user.email}</p>;
+}
+```
+
+---
+
+## Signing Out
+
+```ts
+await authClient.signOut();
+```
+
+Clean. Predictable. No surprises.
+
+---
+
+## Common Mistake (and Fix)
+
+❌ **Wrong way (server-side):**
+
+```ts
+getServerSession(); // ❌ not needed
+```
+
+✅ **Correct way:**
+
+```ts
+await auth.api.getSession();
+```
+
+If you’re using Better Auth — _use Better Auth everywhere_.
+
+---
+
+## When Should You Use Better Auth?
+
+Better Auth is a great choice if:
+
+- You’re using **Next.js App Router**
+- You prefer **server-side auth**
+- You want **clean, minimal APIs**
+- You don’t want to fight your auth library
+
+For side projects, startups, and even serious products — it scales nicely.
+
+---
+
+## Final Thoughts
+
+Authentication shouldn’t be the hardest part of your app.
+
+Better Auth keeps things:
+
+- Simple
+- Modern
+- Aligned with Next.js
+
+If you’re building projects like dashboards, ERPs, LMS platforms, or SaaS apps — this is a solid foundation.
+
+Happy building 🚀

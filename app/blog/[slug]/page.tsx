@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { InlineTOC } from "fumadocs-ui/components/inline-toc";
-import defaultMdxComponents from "fumadocs-ui/mdx";
 import { blog } from "@/lib/source";
+import { ChevronLeft } from "lucide-react";
+import { notFound } from "next/navigation";
+import defaultMdxComponents from "fumadocs-ui/mdx";
+import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -14,31 +15,66 @@ export default async function Page(props: {
   const Mdx = page.data.body;
 
   return (
-    <>
-      <div className="font-jetBrainsMono w-full max-w-4xl mx-auto px-4 py-12 rounded-xl border md:px-8 my-20">
-        <h1 className="mb-2 text-3xl font-medium">{page.data.title}</h1>
-        <p className="mb-4 text-muted-foreground">{page.data.description}</p>
-        <Link href="/blog">Back</Link>
-      </div>
-      <article className="w-full max-w-2xl mx-auto flex flex-col px-4 py-8">
-        <div className="prose min-w-2">
+    <div className="w-full min-h-screen bg-background font-inconsolata">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="my-1.5">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Back to Blog
+          </Link>
+        </div>
+        {/* Title and Meta */}
+        <div className="mb-10">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-balance">
+            {page.data.title}
+          </h1>
+          <p className="text-lg text-muted-foreground mb-6">
+            {page.data.description}
+          </p>
+          <div className="flex flex-row gap-4 text-sm mb-8">
+            <div>
+              <p className="mb-1 text-muted-foreground">Written by</p>
+              <p className="font-medium">{page.data.author}</p>
+            </div>
+            <div>
+              <p className="mb-1 text-sm text-muted-foreground">At</p>
+              <p className="font-medium">
+                <time>
+                  {new Date(page.data.date)
+                    .toLocaleDateString("en-US", {
+                      weekday: "short",
+                      year: "numeric",
+                      month: "short",
+                      day: "2-digit",
+                    })
+                    .replace(",", "")}
+                </time>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Article */}
+        <article className="prose prose-sm sm:prose max-w-none">
           <InlineTOC items={page.data.toc} />
           <Mdx components={defaultMdxComponents} />
+        </article>
+
+        {/* Footer Navigation */}
+        <div className="mt-16 pt-8 border-t border-border">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Back to Blog
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-sm">
-          <div>
-            <p className="mb-1 text-muted-foreground">Written by</p>
-            <p className="font-medium">{page.data.author}</p>
-          </div>
-          <div>
-            <p className="mb-1 text-sm text-muted-foreground">At</p>
-            <p className="font-medium">
-              {new Date(page.data.date).toDateString()}
-            </p>
-          </div>
-        </div>
-      </article>
-    </>
+      </div>
+    </div>
   );
 }
 
