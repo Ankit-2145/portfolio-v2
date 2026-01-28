@@ -1,24 +1,37 @@
-import Link from "next/link";
 import { blog } from "@/lib/source";
+import { Heading } from "@/components/common/Heading";
+import { BlogCard } from "@/components/sections/BlogCard";
 
-export default function Home() {
+const Page = () => {
   const posts = blog.getPages();
 
   return (
-    <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Latest Blog Posts</h1>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
-          <Link
-            key={post.url}
-            href={post.url}
-            className="block bg-secondary rounded-lg shadow-md overflow-hidden p-6"
-          >
-            <h2 className="text-xl font-semibold mb-2">{post.data.title}</h2>
-            <p className="mb-4">{post.data.description}</p>
-          </Link>
-        ))}
-      </div>
+    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Heading
+        title="Blog"
+        subTitle="I love to read and learn, and here I share what I discover."
+      />
+
+      {posts.length > 0 ? (
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+          {posts.map((post) => (
+            <BlogCard
+              key={post.url}
+              slug={post.url}
+              title={post.data.title}
+              description={post.data.description || ""}
+              author={post.data.author}
+              date={post.data.date.toISOString()}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12">
+          <p className="text-muted-foreground text-lg">No blog posts yet.</p>
+        </div>
+      )}
     </main>
   );
-}
+};
+
+export default Page;
