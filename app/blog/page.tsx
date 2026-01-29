@@ -13,21 +13,16 @@ const Page = () => {
       />
 
       {posts.length > 0 ? (
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+        <div className="flex flex-col gap-6">
           {posts.map((post) => (
-            <BlogCard
-              key={post.url}
-              slug={post.url}
-              title={post.data.title}
-              description={post.data.description || ""}
-              author={post.data.author}
-              date={post.data.date.toISOString()}
-            />
+            <BlogCard key={post.url} slug={post.url} title={post.data.title} />
           ))}
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-muted-foreground text-lg">No blog posts yet.</p>
+          <p className="text-muted-foreground text-lg italic">
+            Still thinking of what to write first...
+          </p>
         </div>
       )}
     </main>
