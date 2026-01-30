@@ -6,8 +6,6 @@ import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
 import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
-import ThemeProvider from "@/components/providers/ThemeProvider";
-import ScrollProvider from "@/components/providers/ScrollProvider";
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
@@ -42,20 +40,11 @@ export default function RootLayout({
       <body
         className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="flex-1">
-            <RootProvider>
-              <ScrollProvider>{children}</ScrollProvider>
-            </RootProvider>
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        <main className="flex-1">
+          <RootProvider>{children}</RootProvider>
+        </main>
+        <Footer />
       </body>
     </html>
   );
