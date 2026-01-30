@@ -3,7 +3,7 @@ import { Heading } from "@/components/common/Heading";
 
 const page = () => {
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <Heading
         title="Skills"
         subTitle="Things I'm good at (and enjoy doing)."
@@ -12,7 +12,7 @@ const page = () => {
       behavior, and code that scales as the product grows."
       />
       <SkillSection />
-    </main>
+    </section>
   );
 };
 
