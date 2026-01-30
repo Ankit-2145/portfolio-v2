@@ -28,13 +28,11 @@ const Hero = () => {
       </div>
 
       <div className="flex gap-4 mt-8">
-        <Button className="group bg-black hover:bg-black text-white cursor-pointer hover: shadow-[0px_32px_64px_-12px_#0000004c,0px_16px_32px_-4px_#0000004c,0px_8px_16px_-4px_#0000003d,0px_4px_8px_-2px_#0000003d,0px_-8px_16px_-1px_#00000029,0px_2px_4px_-1px_#0000003d,0px_0px_0px_1px_#000000,inset_0px_0px_0px_1px_#ffffff14,inset_0px_1px_0px_#ffffff33]">
-          Download Resume{" "}
-          <Download className="group-hover:translate-y-0.5 transition-all" />
+        <Button variant="link">
+          Download Resume <Download />
         </Button>
-        <Button className="group bg-black hover:bg-black text-white border-none cursor-pointer shadow-[0px_32px_64px_-16px_#0000004c,0px_16px_32px_-8px_#0000004c,0px_8px_16px_-4px_#0000003d,0px_4px_8px_-2px_#0000003d,0px_-8px_16px_-1px_#00000029,0px_2px_4px_-1px_#0000003d,0px_0px_0px_1px_#000000,inset_0px_0px_0px_1px_#ffffff14,inset_0px_1px_0px_#ffffff33]">
-          Email Me{" "}
-          <Mail className="group-hover:translate-y-0.5 transition-all" />
+        <Button variant="link">
+          Email Me <Mail />
         </Button>
       </div>
     </section>

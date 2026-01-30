@@ -22,7 +22,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { ModeToggle } from "@/components/ui/theme-toggle";
 
 interface NavItem {
   name: string;
@@ -74,13 +74,13 @@ export const Navbar = () => {
             );
           })}
 
-          <span className="px-2.5 md:px-5 mt-2">
-            <AnimatedThemeToggler className="h-6 w-6 cursor-pointer" />
+          <span className="px-2.5 md:px-5 py-3.5">
+            <ModeToggle />
           </span>
         </div>
 
         <div className="lg:hidden flex items-center gap-2">
-          <AnimatedThemeToggler className="h-6 w-6 cursor-pointer" />
+          <ModeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
