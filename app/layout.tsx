@@ -6,8 +6,8 @@ import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
 import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
-import ThemeProvider from "./../components/providers/ThemeProvider";
-import ScrollProvider from "./../components/providers/ScrollProvider";
+import ThemeProvider from "@/components/providers/ThemeProvider";
+import ScrollProvider from "@/components/providers/ScrollProvider";
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
