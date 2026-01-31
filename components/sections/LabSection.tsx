@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 
 export const LabSection = () => {
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-inconsolata">
+    <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-inconsolata my-12">
       {labData.map((item) => (
         <Card
           key={item.id}
