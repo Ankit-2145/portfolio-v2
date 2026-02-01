@@ -6,6 +6,7 @@ import { Inconsolata, Doto, JetBrains_Mono } from "next/font/google";
 
 import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
@@ -42,7 +43,9 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="flex-1">
-          <RootProvider>{children}</RootProvider>
+          <RootProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+          </RootProvider>
         </main>
         <Footer />
       </body>
