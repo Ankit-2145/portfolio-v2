@@ -45,7 +45,7 @@ export default async function Page(props: {
                 <time>
                   {new Date(page.data.date)
                     .toLocaleDateString("en-US", {
-                      weekday: "short",
+                      weekday: "long",
                       year: "numeric",
                       month: "short",
                       day: "2-digit",

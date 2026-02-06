@@ -15,7 +15,12 @@ const Page = () => {
       {posts.length > 0 ? (
         <div className="flex flex-col gap-6 min-w-full">
           {posts.map((post) => (
-            <BlogCard key={post.url} slug={post.url} title={post.data.title} />
+            <BlogCard
+              key={post.url}
+              slug={post.url}
+              title={post.data.title}
+              createdAt={post.data.date}
+            />
           ))}
         </div>
       ) : (
