@@ -6,7 +6,7 @@ const Page = () => {
   const posts = blog.getPages();
 
   return (
-    <section className="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section className="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <Heading
         title="Blog"
         subTitle="I love to read and learn, and here I share what I discover."

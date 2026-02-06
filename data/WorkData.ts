@@ -6,37 +6,38 @@ interface WorkItem {
   location: string;
   description?: string;
   achievements?: string[];
-  link: string;
+  link?: string | undefined;
 }
 
 export const workData: WorkItem[] = [
   {
-    company: "Research Goal",
-    role: "Fullstack Developer",
-    type: "Freelance",
-    period: "Apr - Aug 2025",
-    location: "India, Remote",
+    company: "Shivalik Bimetal Controls Ltd.",
+    role: "ERP Operations Associate",
+    type: "Internship",
+    period: "Jan 2026 - Now",
+    location: "India, In Office",
     description:
-      "Took full ownership of developing a production-ready LMS from scratch, delivering a clean, responsive UI with smooth animations.",
+      "Worked as an ERP Operations Associate, responsible for managing and maintaining the company's enterprise resource planning system to support various business functions.",
     achievements: [
-      "Built core product surfaces including Dashboard, Checkout, Storefront, and Admin Panel with a focus on usability and performance.",
-      "Developed Dashboard, Checkout, Storefront, and Admin Panel.",
-      "Implemented custom domain handling using Next.js middleware and advanced routing strategies.",
+      "Managed daily ERP operations including item creation, vendor onboarding, purchase orders, and requisition workflows.",
+      "Ensured data accuracy across business-critical modules supporting procurement and supply chain processes.",
+      "Gained hands-on exposure to enterprise resource planning environments and real-world business workflows.",
+      "Developed a strong understanding of how software systems support organizational decision-making.",
     ],
-    link: "https://mentra.gg",
   },
   {
     company: "Pinnacle",
-    role: "Fullstack Developer",
-    type: "Freelance",
+    role: "Co-Founder & Fullstack Developer",
     period: "Nov 2023 - Now",
     location: "India, Remote",
+    description:
+      "Co-founded Pinnacle, a freelance web development agency focused on delivering high-quality, user-friendly websites for clients across various industries.",
     achievements: [
       "Designed and developed responsive websites from scratch.",
       "Ensuring clean UI/UX and smooth animations.",
       "Managed end-to-end project execution, from wireframing, prototyping and development to deployment and maintenance.",
       "Deployed and maintained websites using Vercel, Hostinger, and Netlify.",
     ],
-    link: "https://sspinnacle.in",
+    link: "https://sspinnacle.com",
   },
 ];

@@ -4,24 +4,25 @@ import { workData } from "@/data/WorkData";
 
 export const WorkSection = () => {
   return (
-    <section className="space-y-16 font-inconsolata">
+    <section className="space-y-16 font-inconsolata mb-16">
       {workData.map((work, index) => (
-        <div key={index} className="group relative gap-4 md:gap-8">
+        <div key={index} className="relative gap-4 md:gap-8">
           <div className="space-y-4">
             <div className="flex items-start justify-between">
               <div>
-                <Link href={work.link} target="_blank">
-                  <h3 className="text-lg font-jetBrainsMono font-semibold inline-flex items-center gap-1">
+                <Link href={work.link || ""} target="_blank">
+                  <h3 className="group text-lg font-jetBrainsMono font-semibold inline-flex items-center gap-1">
                     {work.company}
-
-                    <ArrowUpRight className="w-4 h-4" />
+                    {work.link && (
+                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+                    )}
                   </h3>
                 </Link>
                 <p className="text-sm text-foreground opacity-60 mt-1">
                   {work.type && (
                     <>
                       {work.type}
-                      <span className="mx-1">•</span>
+                      <span className="mx-1">|</span>
                     </>
                   )}
                   {work.role}
@@ -33,10 +34,11 @@ export const WorkSection = () => {
                 <div className="mt-1 text-xs opacity-80">{work.location}</div>
               </div>
             </div>
-
-            <p className="text-sm text-muted-foreground mt-12">
-              {work.description}
-            </p>
+            {work.description && (
+              <p className="text-sm text-muted-foreground my-8">
+                {work.description}
+              </p>
+            )}
 
             {work.achievements && (
               <ul className="space-y-2">
