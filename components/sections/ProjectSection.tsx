@@ -24,10 +24,10 @@ export const ProjectSection = () => {
             <div className="flex items-start justify-between">
               <div>
                 <Link href={project.link} target="_blank">
-                  <h3 className="text-lg font-jetBrainsMono font-semibold inline-flex items-center gap-1">
+                  <h3 className="group text-lg font-jetBrainsMono font-semibold inline-flex items-center gap-1">
                     {project.name}
 
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
                   </h3>
                 </Link>
               </div>
