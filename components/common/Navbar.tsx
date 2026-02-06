@@ -74,7 +74,7 @@ export const Navbar = () => {
             );
           })}
 
-          <span className="px-2.5 md:px-5 py-3.5">
+          <span className="px-2.5 md:px-5">
             <ModeToggle />
           </span>
         </div>
