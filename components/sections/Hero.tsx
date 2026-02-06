@@ -1,9 +1,18 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import { Download, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Highlighter } from "@/components/ui/highlighter";
 
 const Hero = () => {
+  const email = "ankitsharma2615@gmail.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    toast.success("Email Copied!");
+  };
+
   return (
     <section className="flex flex-col justify-center items-start min-h-[70vh] py-20">
       <div className=" space-y-4">
@@ -16,10 +25,16 @@ const Hero = () => {
         <p className="font-inconsolata text-base text-justify text-muted-foreground">
           I&apos;m a{" "}
           <span className="text-foreground font-medium">
-            full-stack developer
+            <Highlighter action="box" color="#00b4d8">
+              Full Stack Developer
+            </Highlighter>
           </span>{" "}
-          and
-          <span className="text-foreground font-medium"> freelancer</span>{" "}
+          and{" "}
+          <span className="text-foreground font-medium">
+            <Highlighter action="box" color="#ffc300">
+              freelancer
+            </Highlighter>
+          </span>{" "}
           passionate about design and development.
           <br /> I create fast, clear, and user-friendly websites,
           <br /> always learning and looking for ways to build better digital
@@ -28,12 +43,26 @@ const Hero = () => {
       </div>
 
       <div className="flex gap-4 mt-8">
-        <Button variant="link">
-          Download Resume <Download />
-        </Button>
-        <Button variant="link">
-          Email Me <Mail />
-        </Button>
+        {/* Download Resume */}
+        <a
+          href="/resume/Ankit-Sharma-Resume.pdf"
+          download="Ankit-Sharma-Resume.pdf"
+        >
+          <Button variant="default" className="cursor-pointer">
+            Download Resume <Download className="ml-1.5 h-4 w-4" />
+          </Button>
+        </a>
+
+        {/* Email */}
+        <a href="mailto:ankitsharma2615@gmail.com">
+          <Button
+            variant="secondary"
+            className="cursor-pointer"
+            onClick={handleCopy}
+          >
+            Email Me <Mail className="ml-1.5 h-4 w-4" />
+          </Button>
+        </a>
       </div>
     </section>
   );
