@@ -41,13 +41,18 @@ export default function RootLayout({
       <body
         className={`${inconsolata.variable} ${doto.variable} ${jetBrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Navbar />
-        <main className="flex-1">
-          <RootProvider>
-            <ThemeProvider>{children}</ThemeProvider>
-          </RootProvider>
-        </main>
-        <Footer />
+        <RootProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </RootProvider>
       </body>
     </html>
   );
