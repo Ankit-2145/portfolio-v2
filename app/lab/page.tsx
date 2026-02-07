@@ -1,5 +1,6 @@
 import { Heading } from "@/components/common/Heading";
-import { LabSection } from "@/components/sections/LabSection";
+import { LabCard } from "@/components/sections/LabCard";
+import { labData } from "@/data/LabData";
 
 const page = () => {
   return (
@@ -8,7 +9,17 @@ const page = () => {
         title="Lab"
         subTitle="Animations and components built with code."
       />
-      <LabSection />
+      <div className="flex flex-col gap-6 min-w-full">
+        {labData.map((item) => (
+          <LabCard
+            key={item.title}
+            title={item.title}
+            demoUrl={item.demoUrl}
+            description={item.description}
+            tags={item.tags}
+          />
+        ))}
+      </div>
     </section>
   );
 };
