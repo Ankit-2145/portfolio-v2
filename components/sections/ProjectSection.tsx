@@ -11,7 +11,7 @@ export const ProjectSection = () => {
           key={index}
           className="flex flex-col md:flex-row justify-center items-start md:items-center gap-4 md:gap-8"
         >
-          <div className="w-full md:w-auto shrink-0">
+          {/* <div className="w-full md:w-auto shrink-0">
             <Image
               src={project.image}
               alt={project.name}
@@ -19,7 +19,7 @@ export const ProjectSection = () => {
               height={150}
               className="object-cover w-full md:w-80 h-auto"
             />
-          </div>
+          </div> */}
           <div className="space-y-4 w-full">
             <div className="flex items-start justify-between">
               <div>
