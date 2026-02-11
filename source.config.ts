@@ -7,5 +7,6 @@ export const blogPosts = defineCollections({
   schema: frontmatterSchema.extend({
     author: z.string(),
     date: z.date(),
+    draft: z.boolean(),
   }),
 });

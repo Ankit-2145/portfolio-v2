@@ -6,7 +6,8 @@ var blogPosts = defineCollections({
   dir: "content/blog",
   schema: frontmatterSchema.extend({
     author: z.string(),
-    date: z.date()
+    date: z.date(),
+    draft: z.boolean()
   })
 });
 export {

@@ -1,9 +1,9 @@
-import { blog } from "@/lib/source";
 import { Heading } from "@/components/common/Heading";
 import { BlogCard } from "@/components/sections/BlogCard";
+import { getSortedBlogPosts } from "@/lib/blog";
 
 const Page = () => {
-  const posts = blog.getPages();
+  const posts = getSortedBlogPosts();
 
   return (
     <section className="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,6 +20,7 @@ const Page = () => {
               slug={post.url}
               title={post.data.title}
               createdAt={post.data.date}
+              isDraft={post.data.draft === true}
             />
           ))}
         </div>
