@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { projectData } from "@/data/ProjectData";
 
@@ -9,17 +8,8 @@ export const ProjectSection = () => {
       {projectData.map((project, index) => (
         <div
           key={index}
-          className="flex flex-col md:flex-row justify-center items-start md:items-center gap-4 md:gap-8"
+          className="flex flex-col md:flex-row justify-center items-start md:items-center"
         >
-          {/* <div className="w-full md:w-auto shrink-0">
-            <Image
-              src={project.image}
-              alt={project.name}
-              width={300}
-              height={150}
-              className="object-cover w-full md:w-80 h-auto"
-            />
-          </div> */}
           <div className="space-y-4 w-full">
             <div className="flex items-start justify-between">
               <div>

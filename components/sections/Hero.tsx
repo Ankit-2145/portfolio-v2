@@ -26,7 +26,7 @@ const Hero = () => {
           I&apos;m a{" "}
           <span className="text-foreground font-medium">
             <Highlighter action="box" color="#00b4d8">
-              Full Stack Developer
+              Frontend Developer
             </Highlighter>
           </span>{" "}
           and{" "}

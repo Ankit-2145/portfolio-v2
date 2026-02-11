@@ -13,7 +13,7 @@ export const workData: WorkItem[] = [
   {
     company: "Shivalik Bimetal Controls Ltd.",
     role: "ERP Operations Associate",
-    type: "Internship",
+    type: "Apprenticeship",
     period: "Jan 2026 - Now",
     location: "India, In Office",
     description:
