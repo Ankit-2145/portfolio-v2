@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-start min-h-[70vh] py-20">
+    <section className="flex flex-col justify-center items-start min-h-[75vh] py-20">
       <div className=" space-y-4">
         <span className="font-jetBrainsMono text-xs text-muted-foreground">
           Hey, I&apos;m{" "}
@@ -61,6 +61,44 @@ const Hero = () => {
             onClick={handleCopy}
           >
             Email Me <Mail className="ml-1.5 h-4 w-4" />
+          </Button>
+        </a>
+      </div>
+      <div className="flex gap-4 mt-8">
+        <a
+          href="https://github.com/Ankit-2145"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            variant="link"
+            className="underline underline-offset-4 cursor-pointer"
+          >
+            Github
+          </Button>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ankit-sharma-03a680218/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            variant="link"
+            className="underline underline-offset-4 cursor-pointer"
+          >
+            LinkedIn
+          </Button>
+        </a>
+        <a
+          href="https://x.com/Ankit__46"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            variant="link"
+            className="underline underline-offset-4 cursor-pointer"
+          >
+            Twitter
           </Button>
         </a>
       </div>
