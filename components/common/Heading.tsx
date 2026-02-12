@@ -11,7 +11,7 @@ export const Heading = ({ title, subTitle, paragraph }: HeadingProps) => (
         {subTitle}
       </h2>
     </div>
-    <p className="font-inconsolata text-base text-justify text-muted-foreground mt-8">
+    <p className="font-inconsolata text-sm text-justify text-muted-foreground mt-8">
       {paragraph}
     </p>
   </section>

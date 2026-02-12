@@ -12,6 +12,6 @@ export const labData: LabData[] = [
       "Process Pillars is a visually intuitive component that represents a typical product development lifecycle.",
     demoUrl:
       "https://21st.dev/community/components/Ankit-2145/process-pillars/default",
-    tags: ["React", "Framer Motion", "Tailwind CSS", "Mdx"],
+    tags: ["React", "Framer Motion", "Tailwind CSS"],
   },
 ];
