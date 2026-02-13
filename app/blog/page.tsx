@@ -12,7 +12,7 @@ const Page = () => {
         subTitle="Things I'm learning, building, and figuring out."
       />
 
-      {posts.length == 0 ? (
+      {posts.length > 0 ? (
         <div className="flex flex-col gap-6 min-w-full">
           {posts.map((post) => (
             <BlogCard
