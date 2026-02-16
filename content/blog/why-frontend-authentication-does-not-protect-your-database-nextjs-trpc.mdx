@@ -1,0 +1,119 @@
+---
+title: "Frontend Authentication Doesn’t Actually Protect Your Database"
+description: "Learn why frontend authentication in Next.js doesn’t truly protect your database. A practical lesson using Next.js 16, tRPC, Prisma and Better Auth on securing the data layer properly."
+date: 2026-02-16
+draft: false
+author: "Ankit Sharma"
+---
+
+![Hello](/blog-images/nextjs-trpc-prisma.png)
+
+While building a web app using **Next.js 16, tRPC, Prisma and Better Auth**, I learned something that completely changed how I think about authentication now.
+
+At first, everything looked secure.
+
+- Users had to create an account
+- Unauthenticated users were redirected
+- Routes were protected
+
+But then I asked myself:
+
+> What happens if my authentication check breaks?
+
+That’s when I realized something important:
+
+**Frontend authentication does NOT protect your database it is just for better user experience.**
+
+---
+
+## The Common Mistake in Next.js Apps
+
+Most tutorials show route protection like this:
+
+```ts title="page.tsx"
+const session = await auth.api.getSession();
+
+if (!session) redirect("/login");
+```
+
+This protects:
+
+- Pages
+- Components
+- Navigation
+
+But it does **not** protect:
+
+- API routes
+- tRPC procedures (if using)
+- Direct backend requests
+- Database queries
+
+If that check fails due to a bug, misconfiguration, or refactor — your entire app becomes exposed.
+
+And your database? Still wide open.
+
+---
+
+## Protecting the Data Layer
+
+Since I was using **tRPC**, I moved authentication to the backend using a custom procedure as `protectedProcedure`.
+
+Instead of trusting page-level checks, I created middleware that:
+
+1. Fetches the session using Better Auth
+2. Throws an `UNAUTHORIZED` TRPC error if no session exists
+3. Attaches the session to context
+4. Allows database access only after validation
+
+Example:
+
+```ts title="trpc/init.ts"
+export const protectedProcedure = t.procedure.use(async ({ ctx, next }) => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    throw new TRPCError({
+      code: "UNAUTHORIZED",
+      message: "Unauthorized",
+    });
+  }
+
+  return next({ ctx: { ...ctx, auth: session } });
+});
+```
+
+Now, every database query goes through this layer.
+
+```ts title="trpc/routers/_app.ts"
+export const appRouter = createTRPCRouter({
+  getUsers: protectedProcedure.query(({ ctx }) => {
+    return prisma.user.findUnique({
+      where: {
+        id: ctx.auth.user.id,
+      },
+    });
+  }),
+});
+
+export type AppRouter = typeof appRouter;
+```
+
+Even if the frontend breaks, the backend still protects the data.
+
+---
+
+Frontend auth improves user experience.
+Backend auth ensures security.
+
+If your page-level authentication breaks, your system should not.
+
+That’s when you move from “following tutorials” to actually thinking like an engineer.
+
+If you're building with **Next.js, tRPC, Prisma, or Better Auth**, make sure you're not just protecting routes.
+
+Protect your data layer.
+
+Because real security starts on the server.

@@ -7,6 +7,6 @@ const create = browser<typeof Config, import("fumadocs-mdx/runtime/types").Inter
   }
 }>();
 const browserCollections = {
-  blogPosts: create.doc("blogPosts", {"better-auth.mdx": () => import("../content/blog/better-auth.mdx?collection=blogPosts"), "prisma.mdx": () => import("../content/blog/prisma.mdx?collection=blogPosts"), }),
+  blogPosts: create.doc("blogPosts", {"better-auth.mdx": () => import("../content/blog/better-auth.mdx?collection=blogPosts"), "prisma.mdx": () => import("../content/blog/prisma.mdx?collection=blogPosts"), "why-frontend-authentication-does-not-protect-your-database-nextjs-trpc.mdx": () => import("../content/blog/why-frontend-authentication-does-not-protect-your-database-nextjs-trpc.mdx?collection=blogPosts"), }),
 };
 export default browserCollections;
