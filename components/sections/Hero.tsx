@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-start min-h-[75vh] py-20">
+    <section className="flex flex-col justify-center items-start min-h-[85vh] py-20">
       <div className=" space-y-4">
         <span className="font-jetBrainsMono text-xs text-muted-foreground">
           Hey, I&apos;m{" "}
