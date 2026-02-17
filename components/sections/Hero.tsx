@@ -22,7 +22,7 @@ const Hero = () => {
         <h1 className="font-doto text-2xl font-semibold uppercase">
           Ankit Sharma
         </h1>
-        <p className="font-inconsolata text-base text-justify text-muted-foreground">
+        <p className="font-inconsolata text-base text-muted-foreground">
           I&apos;m a{" "}
           <span className="text-foreground font-medium">
             <Highlighter action="box" color="#00b4d8">
