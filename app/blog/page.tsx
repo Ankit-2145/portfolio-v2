@@ -20,7 +20,7 @@ const Page = () => {
               slug={post.url}
               title={post.data.title}
               createdAt={post.data.date}
-              isDraft={post.data.draft === true}
+              isDraft={post.data.draft}
             />
           ))}
         </div>
