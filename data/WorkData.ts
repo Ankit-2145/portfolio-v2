@@ -12,23 +12,24 @@ interface WorkItem {
 export const workData: WorkItem[] = [
   {
     company: "Shivalik Bimetal Controls Ltd.",
-    role: "ERP Operations Associate",
+    role: "ERP Operations Trainee",
     type: "Apprenticeship",
-    period: "Jan 2026 - Now",
+    period: "Jan 2026 - Present",
     location: "India, In Office",
     description:
-      "Worked as an ERP Operations Associate, responsible for managing and maintaining the company's enterprise resource planning system to support various business functions.",
+      "ERP Operations Trainee supporting daily operations and maintenance of the company's enterprise resource planning (ERP) system across procurement and supply chain functions.",
     achievements: [
-      "Managed daily ERP operations including item creation, vendor onboarding, purchase orders, and requisition workflows.",
-      "Ensured data accuracy across business-critical modules supporting procurement and supply chain processes.",
-      "Gained hands-on exposure to enterprise resource planning environments and real-world business workflows.",
-      "Developed a strong understanding of how software systems support organizational decision-making.",
+      "Managed end-to-end ERP workflows including item master creation, vendor onboarding, purchase order processing, and requisition management.",
+      "Maintained high data accuracy across procurement and inventory modules to ensure smooth operational processes.",
+      "Collaborated with cross-functional teams to resolve ERP-related issues and streamline system workflows.",
+      "Assisted in generating operational reports and supporting business decision-making through system data analysis.",
     ],
   },
   {
     company: "Pinnacle",
-    role: "Co-Founder & Fullstack Developer",
-    period: "Nov 2023 - Now",
+    role: "Fullstack Developer",
+    type: "Co-Founder",
+    period: "Nov 2023 - Present",
     location: "India, Remote",
     description:
       "Co-founded Pinnacle, a freelance web development agency focused on delivering high-quality, user-friendly websites for clients across various industries.",

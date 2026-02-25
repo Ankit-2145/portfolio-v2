@@ -1,5 +1,5 @@
 import { Heading } from "@/components/common/Heading";
-import { ProjectSection } from "@/components/sections/ProjectSection";
+// import { ProjectSection } from "@/components/sections/ProjectSection";
 
 const page = () => {
   return (
@@ -8,7 +8,12 @@ const page = () => {
         title="Projects"
         subTitle="Projects built from learning and curiosity."
       />
-      <ProjectSection />
+      {/* <ProjectSection /> */}
+      <div className="flex min-h-[60vh] items-center justify-center text-center">
+        <p className="font-inconsolata text-muted-foreground text-sm opacity-70">
+          Few Packages left for update...
+        </p>
+      </div>
     </section>
   );
 };
