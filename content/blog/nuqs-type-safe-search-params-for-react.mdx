@@ -1,8 +1,8 @@
 ---
 title: "Managing URL State in Next.js with nuqs"
 description: "Modern web applications are highly interactive. We build filtering systems, pagination, search, sorting, tab navigation, dashboards, and much more. But there’s one important detail many developers overlook params."
-date: 2026-03-01
-draft: true
+date: 2026-03-09
+draft: false
 author: "Ankit Sharma"
 ---
 
@@ -26,7 +26,7 @@ This article is written for beginner to intermediate Next.js developers who want
 
 ---
 
-## 1. What is `nuqs`?
+## What is `nuqs`?
 
 `nuqs` stands for **Next URL Query State**.
 
@@ -60,7 +60,7 @@ Now:
 
 ---
 
-## 2. Why Does `nuqs` Exist?
+## Why Does `nuqs` Exist?
 
 Let’s look at how we typically manage query parameters in Next.js without `nuqs`.
 
@@ -94,7 +94,7 @@ As your app grows, this pattern becomes difficult to maintain.
 
 ---
 
-## 3. What Problems Does `nuqs` Solve?
+## What Problems Does `nuqs` Solve?
 
 ### 1. Type Safety
 
@@ -196,7 +196,7 @@ The logic becomes modular and easy to reason about.
 
 ---
 
-## 4. Why We Need It Specifically in Next.js
+## Why We Need It Specifically in Next.js
 
 This is where `nuqs` becomes especially powerful.
 
@@ -267,7 +267,7 @@ Using `nuqs` helps you build applications that behave like professional SaaS pro
 
 ---
 
-## 5. When Should You Use `nuqs`?
+## When Should You Use `nuqs`?
 
 You should use `nuqs` when:
 
@@ -288,7 +288,7 @@ Like any tool, it should solve a real problem — not be added unnecessarily.
 
 ---
 
-## 6. Manual Approach vs `nuqs`
+## Manual Approach vs `nuqs`
 
 ### Manual approach
 
@@ -323,5 +323,3 @@ Your application becomes more robust and user-friendly.
 `nuqs` is not a magic tool, but it solves a very specific and common problem in Next.js applications: **clean and predictable query state management.**
 
 If you're building dashboards, filterable listings, admin panels, or search-heavy pages in Next.js, it’s worth considering.
-
-Understanding this pattern also shows maturity as a developer. You’re not just building UI — you’re thinking about state architecture, data flow, and user experience at a deeper level.
