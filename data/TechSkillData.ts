@@ -32,6 +32,12 @@ export const databasesData = [
   { name: "PostgreSQL", icon: "/icons/databases/postgresql.svg" },
   { name: "NeonDB", icon: "/icons/databases/neon.svg" },
   { name: "Prisma", icon: "/icons/databases/prisma.svg" },
+  { name: "Drizzle", icon: "/icons/databases/drizzle-orm.svg" },
+];
+
+export const baasData = [
+  { name: "appwrite", icon: "/icons/baas/appwrite.svg" },
+  { name: "supabase", icon: "/icons/baas/supabase.svg" },
 ];
 
 export const toolsData = [
