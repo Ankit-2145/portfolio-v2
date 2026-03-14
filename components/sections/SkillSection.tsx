@@ -1,4 +1,5 @@
 import {
+  baasData,
   coreData,
   databasesData,
   devopsData,
@@ -18,6 +19,7 @@ export const SkillSection = () => {
         technologies={frameworksData}
       />
       <TechSection title="DATABASES && ORMs" technologies={databasesData} />
+      <TechSection title="BaaS" technologies={baasData} />
       <TechSection title="TOOLS" technologies={toolsData} />
       <TechSection title="PLATFORMS" technologies={platformData} />
       <TechSection title="SOFTWARES" technologies={softwareData} />
