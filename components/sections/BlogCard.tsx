@@ -16,16 +16,16 @@ export const BlogCard = ({
 }: BlogCardProps) => {
   return (
     <Link href={slug} className="group">
-      <div className="font-inconsolata flex flex-col lg:flex-row items-start lg:items-center justify-between p-4 rounded-lg border border-dashed">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
-          <h2 className="text-foreground line-clamp-2 text-lg font-normal transition-all group-hover:translate-x-0.5">
+      <div className="flex flex-col items-start justify-between rounded-lg border border-dashed p-4 font-inconsolata lg:flex-row lg:items-center">
+        <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-center">
+          <h2 className="line-clamp-2 text-lg font-normal text-foreground transition-all group-hover:translate-x-0.5">
             {title}
           </h2>
           {isDraft && <Badge>Draft</Badge>}
         </div>
 
         <div>
-          <p className="text-sm text-muted-foreground font-medium mt-2 lg:mt-0">
+          <p className="mt-2 text-sm font-medium text-muted-foreground lg:mt-0">
             <time>
               {new Date(createdAt)
                 .toLocaleDateString("en-US", {

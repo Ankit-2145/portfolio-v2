@@ -44,14 +44,14 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="font-inconsolata border-b border-dashed">
-      <div className="flex justify-between items-center">
-        <Link href="/" className="px-2.5 md:px-5 py-3.5 bg-background">
-          <span className="text-base text-foreground font-medium select-none">
+    <nav className="border-b border-dashed font-inconsolata">
+      <div className="flex items-center justify-between">
+        <Link href="/" className="bg-background px-2.5 py-3.5 md:px-5">
+          <span className="text-base font-medium text-foreground select-none">
             ANKIT SHARMA.
           </span>
         </Link>
-        <div className="hidden lg:flex items-center">
+        <div className="hidden items-center lg:flex">
           {navItems.map((item) => {
             const isActive =
               (pathname === "/" && item.href === "/") ||
@@ -63,7 +63,7 @@ export const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "px-2.5 md:px-5 py-3.5",
+                  "px-2.5 py-3.5 md:px-5",
                   isActive && "bg-foreground text-background",
                 )}
               >
@@ -79,13 +79,13 @@ export const Navbar = () => {
           </span>
         </div>
 
-        <div className="lg:hidden flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:hidden">
           <ModeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
-                className="px-0 text-lg hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 cursor-pointer"
+                className="cursor-pointer px-0 text-lg hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
               >
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
@@ -93,7 +93,7 @@ export const Navbar = () => {
             </SheetTrigger>
             <SheetContent className="bg-background" side="top">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <div className="flex flex-col px-6 divide-y-2 divide-dashed">
+              <div className="flex flex-col divide-y-2 divide-dashed px-6">
                 {navItems.map((item) => {
                   const isActive =
                     (pathname === "/" && item.href === "/") ||
@@ -104,7 +104,7 @@ export const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       className={cn(
-                        "px-2.5 md:px-5 py-3.5 text-xl text-foreground",
+                        "px-2.5 py-3.5 text-xl text-foreground md:px-5",
                         isActive && "bg-background text-foreground",
                       )}
                       onClick={() => setIsOpen(false)}

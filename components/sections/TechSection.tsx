@@ -29,12 +29,12 @@ export const TechSection = ({ title, technologies }: TechSectionProps) => {
             <Button
               key={index}
               size="sm"
-              className="font-inconsolata text-foreground py-2 border border-border gap-1.5 bg-muted/40 hover:bg-muted/40 px-1.5 pr-2 text-[13px]"
+              className="gap-1.5 border border-border bg-muted/40 px-1.5 py-2 pr-2 font-inconsolata text-[13px] text-foreground hover:bg-muted/40"
             >
               {typeof Icon === "string" ? (
                 <Image src={Icon} alt={tech.name} width={20} height={20} />
               ) : (
-                <Icon className="w-5 h-5 text-foreground" />
+                <Icon className="h-5 w-5 text-foreground" />
               )}
 
               {tech.name}

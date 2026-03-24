@@ -14,8 +14,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-start min-h-[85vh] py-20">
-      <div className=" space-y-4">
+    <section className="flex min-h-[85vh] flex-col items-start justify-center py-20">
+      <div className="space-y-4">
         <span className="font-jetBrainsMono text-xs text-muted-foreground">
           Hey, I&apos;m{" "}
         </span>
@@ -24,13 +24,13 @@ const Hero = () => {
         </h1>
         <p className="font-inconsolata text-base text-muted-foreground">
           I&apos;m a{" "}
-          <span className="text-foreground font-medium">
+          <span className="font-medium text-foreground">
             <Highlighter action="box" color="#00b4d8">
               Frontend Developer
             </Highlighter>
           </span>{" "}
           and{" "}
-          <span className="text-foreground font-medium">
+          <span className="font-medium text-foreground">
             <Highlighter action="box" color="#ffc300">
               freelancer
             </Highlighter>
@@ -42,7 +42,7 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="flex gap-4 mt-8">
+      <div className="mt-8 flex gap-4">
         {/* Download Resume */}
         <a
           href="/resume/Ankit-Sharma-Resume.pdf"
@@ -64,7 +64,7 @@ const Hero = () => {
           </Button>
         </a>
       </div>
-      <div className="flex gap-4 mt-8">
+      <div className="mt-8 flex gap-4">
         <a
           href="https://github.com/Ankit-2145"
           target="_blank"
@@ -72,7 +72,7 @@ const Hero = () => {
         >
           <Button
             variant="link"
-            className="underline underline-offset-4 cursor-pointer"
+            className="cursor-pointer underline underline-offset-4"
           >
             Github
           </Button>
@@ -84,7 +84,7 @@ const Hero = () => {
         >
           <Button
             variant="link"
-            className="underline underline-offset-4 cursor-pointer"
+            className="cursor-pointer underline underline-offset-4"
           >
             LinkedIn
           </Button>
@@ -96,7 +96,7 @@ const Hero = () => {
         >
           <Button
             variant="link"
-            className="underline underline-offset-4 cursor-pointer"
+            className="cursor-pointer underline underline-offset-4"
           >
             Twitter
           </Button>

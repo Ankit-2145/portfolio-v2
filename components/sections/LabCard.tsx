@@ -16,19 +16,19 @@ export const LabCard = ({
 }: LabCardProps) => {
   return (
     <Link href={demoUrl} className="group">
-      <div className="font-inconsolata flex flex-col items-start p-4 rounded-lg border border-dashed space-y-2">
-        <h2 className="flex items-center gap-2 text-foreground line-clamp-2 text-lg font-normal">
+      <div className="flex flex-col items-start space-y-2 rounded-lg border border-dashed p-4 font-inconsolata">
+        <h2 className="line-clamp-2 flex items-center gap-2 text-lg font-normal text-foreground">
           {title}
-          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
         </h2>
-        <p className="text-sm text-muted-foreground font-medium">
+        <p className="text-sm font-medium text-muted-foreground">
           {description}
         </p>
         <div className="mt-4">
           {tags?.map((tag) => (
             <span
               key={tag}
-              className="text-xs bg-foreground text-background font-medium mr-2 p-2 rounded-full"
+              className="mr-2 rounded-full bg-foreground p-2 text-xs font-medium text-background"
             >
               {tag}
             </span>
