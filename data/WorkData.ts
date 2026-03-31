@@ -10,21 +10,21 @@ interface WorkItem {
 }
 
 export const workData: WorkItem[] = [
-  {
-    company: "Shivalik Bimetal Controls Ltd.",
-    role: "ERP Operations Trainee",
-    type: "Apprenticeship",
-    period: "Jan 2026 - Present",
-    location: "India, In Office",
-    description:
-      "ERP Operations Trainee supporting daily operations and maintenance of the company's enterprise resource planning (ERP) system across procurement and supply chain functions.",
-    achievements: [
-      "Managed end-to-end ERP workflows including item master creation, vendor onboarding, purchase order processing, and requisition management.",
-      "Maintained high data accuracy across procurement and inventory modules to ensure smooth operational processes.",
-      "Collaborated with cross-functional teams to resolve ERP-related issues and streamline system workflows.",
-      "Assisted in generating operational reports and supporting business decision-making through system data analysis.",
-    ],
-  },
+  // {
+  //   company: "Shivalik Bimetal Controls Ltd.",
+  //   role: "ERP Operations Trainee",
+  //   type: "Apprenticeship",
+  //   period: "Jan 2026 - Present",
+  //   location: "India, In Office",
+  //   description:
+  //     "ERP Operations Trainee supporting daily operations and maintenance of the company's enterprise resource planning (ERP) system across procurement and supply chain functions.",
+  //   achievements: [
+  //     "Managed end-to-end ERP workflows including item master creation, vendor onboarding, purchase order processing, and requisition management.",
+  //     "Maintained high data accuracy across procurement and inventory modules to ensure smooth operational processes.",
+  //     "Collaborated with cross-functional teams to resolve ERP-related issues and streamline system workflows.",
+  //     "Assisted in generating operational reports and supporting business decision-making through system data analysis.",
+  //   ],
+  // },
   {
     company: "Pinnacle",
     role: "Fullstack Developer",
