@@ -26,7 +26,7 @@ const Hero = () => {
           I&apos;m a{" "}
           <span className="font-medium text-foreground">
             <Highlighter action="box" color="#00b4d8">
-              Frontend Developer
+              Fullstack Developer
             </Highlighter>
           </span>{" "}
           and{" "}
@@ -45,8 +45,8 @@ const Hero = () => {
       <div className="mt-8 flex gap-4">
         {/* Download Resume */}
         <a
-          href="/resume/Ankit-Sharma-Resume.pdf"
-          download="Ankit-Sharma-Resume.pdf"
+          href="/resume/Ankit_Sharma_Resume.pdf"
+          download="Ankit_Sharma_Resume.pdf"
         >
           <Button variant="default" className="cursor-pointer">
             Download Resume <Download className="ml-1.5 h-4 w-4" />
